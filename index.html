@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Divs One by One</title>
+    <script src="index.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container {
+            width: 99%;
+            padding: 10px;
+            border: 1px solid #000;
+            background-color: tomato;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+        .box {
+            width: 19%;
+            height: 50px;
+            margin: 5px 0;
+            background-color: rgba(204, 119, 8, 0.63);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            height: 40px;
+            width: 150px;
+            background-color: yellow;
+            margin-left: 250px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box" id="div1">Div 1</div>
+    <div class="box" id="div2">Div 2</div>
+    <div class="box" id="div3">Div 3</div>
+    <div class="box" id="div4">Div 4</div>
+    <div class="box" id="div5">Div 5</div>
+</div>
+
+<button onclick="hideDiv()">Hide Div</button>
+
+
+<script>
+    let currentDiv = 1;
+    function hideDiv() {
+        if (currentDiv <= 5) {
+            document.getElementById('div' + currentDiv).style.display = 'none';
+            currentDiv++;
+        }
+    }
+</script>
+
+</body>
+</html>
